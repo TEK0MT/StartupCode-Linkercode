@@ -4,11 +4,11 @@
 #define STACK_START  (RAMSTART + RAMSIZE)
 extern uint32_t _sidata,_sdata,_edata,_sbss,_ebss;
 extern int main();
-void Default_Handler            (void)
+void Default_Handler(void)
 {
     while(1);
 }
-void Reset_Handler              (void)
+void Reset_Handler(void)
 {
 
     //copy .data
@@ -28,6 +28,7 @@ void Reset_Handler              (void)
     }
     //calling main
     main();
+    
     while(1);
 }
 
